@@ -1,8 +1,10 @@
-import {Table,Column,Model,DataType, PrimaryKey} from "sequelize-typescript"
+import {Table,Column,Model,DataType, PrimaryKey, HasMany} from "sequelize-typescript"
+import Content from "./content.model";
+import Category from "./category.model";
 
 @Table({
-    tableName: 'users',//ui ma dekhine naam
-    modelName: 'User', //for query
+    tableName: 'users',
+    modelName: 'User', 
     timestamps: true
 })
 
@@ -32,6 +34,12 @@ class User extends Model{
         defaultValue: 'student'
     })
     declare role:string
+
+    @HasMany(() => Content, 'authorId')
+    declare contents: Content[];
+
+    @HasMany(() => Category, 'createdBy')
+    declare categories: Category[];
 }
 
 
