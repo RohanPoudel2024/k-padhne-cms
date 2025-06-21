@@ -1,0 +1,9 @@
+node_modules# Ignore top-level node_modules if they exist
+node_modules/
+
+# Ignore server node_modules
+server/node_modules/
+
+# Optional: ignore logs or environment files
+*.log
+.env

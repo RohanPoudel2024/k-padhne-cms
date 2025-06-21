@@ -1,4 +1,4 @@
-import {Sequelize} from 'sequelize'
+import {Sequelize} from 'sequelize-typescript'
 import { dbConfig } from '../config/Config'
 
 const sequelize = new Sequelize({
@@ -7,7 +7,8 @@ const sequelize = new Sequelize({
     password:dbConfig.PASSWORD,
     host:dbConfig.HOST,
     dialect: 'mysql',
-    port:Number(dbConfig.PORT)
+    port:Number(dbConfig.PORT),
+    models:[__dirname+'/models']
 })
 
 sequelize.authenticate()
@@ -17,6 +18,21 @@ sequelize.authenticate()
 .catch((e)=>{
     console.log('DB Connection Failed',e)
 })
+
+
+//migration
+const migrateDb = ()=>{
+    try{
+        sequelize.sync({
+            force:true
+        })
+        console.log('DB Migrated')
+    }catch(error){
+        console.log('Error in migration',error)
+    }
+}
+
+migrateDb()
 
 export default sequelize
 
