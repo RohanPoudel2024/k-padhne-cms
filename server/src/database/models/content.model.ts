@@ -19,13 +19,19 @@ class Content extends Model {
 
     @Column({
         type: DataType.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            len: [1, 255]
+        }
     })
     declare title: string;
 
     @Column({
         type: DataType.TEXT,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            len: [1, 10000]
+        }
     })
     declare body: string;
 
