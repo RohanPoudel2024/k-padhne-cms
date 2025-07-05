@@ -18,7 +18,12 @@ class User extends Model{
     declare id : string
 
     @Column({
-        type:DataType.STRING
+        type:DataType.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            len: [3, 50]
+        }
     })
     declare username : string
     @Column({
@@ -26,7 +31,12 @@ class User extends Model{
     })
     declare password : string
     @Column({
-        type:DataType.STRING
+        type:DataType.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true
+        }
     })
     declare email : string;
     @Column({
