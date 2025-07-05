@@ -6,7 +6,15 @@ import ContentCategory from "./content-category.model";
 @Table({
     tableName: 'contents',
     modelName: 'Content',
-    timestamps: true
+    timestamps: true,
+    indexes: [
+        { fields: ['status'] },
+        { fields: ['type'] },
+        { fields: ['authorId'] },
+        { fields: ['publishedAt'] },
+        { fields: ['status', 'type'] },
+        { fields: ['authorId', 'status'] }
+    ]
 })
 
 class Content extends Model {
