@@ -103,6 +103,15 @@ class Content extends Model {
         defaultValue: true
     })
     declare isActive: boolean;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        validate: {
+            len: [0, 500]
+        }
+    })
+    declare summary: string;
 }
 
 export default Content;
