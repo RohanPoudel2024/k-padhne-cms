@@ -133,6 +133,13 @@ class Content extends Model {
         comment: 'Total word count of the content'
     })
     declare wordCount: number;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'Source or reference for the content'
+    })
+    declare source: string;
 }
 
 export default Content;
