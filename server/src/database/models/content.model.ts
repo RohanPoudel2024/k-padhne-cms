@@ -140,6 +140,13 @@ class Content extends Model {
         comment: 'Source or reference for the content'
     })
     declare source: string;
+
+    @Column({
+        type: DataType.BOOLEAN,
+        defaultValue: false,
+        comment: 'Mark content as featured'
+    })
+    declare isFeatured: boolean;
 }
 
 export default Content;
