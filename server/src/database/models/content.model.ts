@@ -112,6 +112,13 @@ class Content extends Model {
         }
     })
     declare summary: string;
+
+    @Column({
+        type: DataType.INTEGER,
+        allowNull: true,
+        comment: 'Estimated reading time in minutes'
+    })
+    declare readingTime: number;
 }
 
 export default Content;
