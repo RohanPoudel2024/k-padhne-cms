@@ -147,6 +147,13 @@ class Content extends Model {
         comment: 'Mark content as featured'
     })
     declare isFeatured: boolean;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'Subtitle for the content'
+    })
+    declare subtitle: string;
 }
 
 export default Content;
