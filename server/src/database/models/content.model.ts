@@ -154,6 +154,13 @@ class Content extends Model {
         comment: 'Subtitle for the content'
     })
     declare subtitle: string;
+
+    @Column({
+        type: DataType.BOOLEAN,
+        defaultValue: false,
+        comment: 'Flag to quickly check if content is a draft'
+    })
+    declare isDraft: boolean;
 }
 
 export default Content;
