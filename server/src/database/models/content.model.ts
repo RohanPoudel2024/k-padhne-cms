@@ -119,6 +119,13 @@ class Content extends Model {
         comment: 'Estimated reading time in minutes'
     })
     declare readingTime: number;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'Language code (e.g., en, fr, np)'
+    })
+    declare language: string;
 }
 
 export default Content;
