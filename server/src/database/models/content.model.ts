@@ -161,6 +161,13 @@ class Content extends Model {
         comment: 'Flag to quickly check if content is a draft'
     })
     declare isDraft: boolean;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'Editor used for content creation (e.g., markdown, html)'
+    })
+    declare editor: string;
 }
 
 export default Content;
