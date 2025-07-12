@@ -126,6 +126,13 @@ class Content extends Model {
         comment: 'Language code (e.g., en, fr, np)'
     })
     declare language: string;
+
+    @Column({
+        type: DataType.INTEGER,
+        allowNull: true,
+        comment: 'Total word count of the content'
+    })
+    declare wordCount: number;
 }
 
 export default Content;
