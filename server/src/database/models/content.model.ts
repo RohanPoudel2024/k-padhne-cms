@@ -168,6 +168,13 @@ class Content extends Model {
         comment: 'Editor used for content creation (e.g., markdown, html)'
     })
     declare editor: string;
+
+    @Column({
+        type: DataType.BOOLEAN,
+        defaultValue: true,
+        comment: 'Flag to indicate if content is public'
+    })
+    declare isPublic: boolean;
 }
 
 export default Content;
