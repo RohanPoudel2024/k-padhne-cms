@@ -94,6 +94,12 @@ class AuditLog extends Model {
         defaultValue: 'LOW'
     })
     declare severity: string;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true
+    })
+    declare device: string;
 }
 
 export default AuditLog;
