@@ -100,6 +100,13 @@ class AuditLog extends Model {
         allowNull: true
     })
     declare device: string;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'Geographical location of the user action'
+    })
+    declare location: string;
 }
 
 export default AuditLog;
