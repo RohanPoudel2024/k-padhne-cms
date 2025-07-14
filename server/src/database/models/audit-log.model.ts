@@ -107,6 +107,13 @@ class AuditLog extends Model {
         comment: 'Geographical location of the user action'
     })
     declare location: string;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'Browser used during the action'
+    })
+    declare browser: string;
 }
 
 export default AuditLog;
