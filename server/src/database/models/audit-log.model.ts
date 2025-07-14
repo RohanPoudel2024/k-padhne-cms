@@ -114,6 +114,13 @@ class AuditLog extends Model {
         comment: 'Browser used during the action'
     })
     declare browser: string;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'Session ID for the user action'
+    })
+    declare sessionId: string;
 }
 
 export default AuditLog;
