@@ -49,6 +49,12 @@ class Category extends Model {
     })
     declare color: string;
 
+    @Column({
+        type: DataType.STRING,
+        allowNull: true
+    })
+    declare icon: string;
+
     @ForeignKey(() => Category)
     @Column({
         type: DataType.UUID,
